@@ -7,7 +7,7 @@ window.App = React.createClass({
   },
 
   doAjaxReq() {
-    window.fetch('//slowajax.herokuapp.com')
+    window.fetch('/ajax')
         .then(res => res.text())
         .then(body => this.setState(state => ({ ajax: state.ajax + body })));
   },

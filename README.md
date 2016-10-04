@@ -6,7 +6,14 @@ for testing [https://www.prerender.cloud](https://www.prerender.cloud)'s ability
 3. tolerate dangerouslySetInnerHTML
 4. set checksums considering all of the above, in multiple versions of react without user intervention
 
-## Documentation
+## Usage
+`npm start`
+* http://localhost:4000/version.0.13.html
+* http://localhost:4000/version.0.14.html
+* http://localhost:4000/version.0.15.html
+
+
+## ReactJS Documentation
 
 * 13 - https://github.com/facebook/react/tree/0.13-stable/docs/docs
 * 14 - https://github.com/facebook/react/tree/0.14-stable/docs/docs
