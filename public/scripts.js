@@ -23,7 +23,7 @@ window.App = React.createClass({
       <div>
         <h1>ReactJS test for http://www.prerender.cloud</h1>
         <p>with 2 React roots, 2 ajax requests and dangerouslySetInnerHTML</p>
-        <div>{this.state.ajax}</div>
+        <div>{this.props.message}: {this.state.ajax}</div>
         <div dangerouslySetInnerHTML={{__html: `'<&>'`}} />
         {els}
       </div>

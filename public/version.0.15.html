@@ -5,12 +5,7 @@
     <title>ReactJS 0.15 test for http://www.prerender.cloud</title>
   </head>
   <body>
-<script>
-
-
-</script>
     <div id='root'></div>
-    <hr />
     <div id='root2'></div>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.js'></script>
@@ -20,8 +15,8 @@
 
     <script type='text/babel' src='./scripts.js'></script>
     <script type='text/babel'>
-      ReactDOM.render(<window.App />, document.getElementById('root'));
-      ReactDOM.render(<window.App />, document.getElementById('root2'));
+      ReactDOM.render(React.createElement(window.App, {message: 'ajax1'}), document.getElementById('root'));
+      ReactDOM.render(React.createElement(window.App, {message: 'ajax2'}), document.getElementById('root2'));
     </script>
   </body>
 </html>

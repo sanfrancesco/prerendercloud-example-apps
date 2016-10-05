@@ -1,8 +1,8 @@
 var express = require('express');
 var app = express();
 
-app.use(express.static('public'));
 app.use(require('prerendercloud'));
+app.use(express.static('public'));
 
 app.get('/ajax', function (req, res) {
   setTimeout(() => {

@@ -15,8 +15,8 @@
 
     <script type='text/babel' src='./scripts.js'></script>
     <script type='text/babel'>
-      ReactDOM.render(<window.App />, document.getElementById('root'));
-      ReactDOM.render(<window.App />, document.getElementById('root2'));
+      ReactDOM.render(React.createElement(window.App, {message: 'ajax1'}), document.getElementById('root'));
+      ReactDOM.render(React.createElement(window.App, {message: 'ajax2'}), document.getElementById('root2'));
     </script>
   </body>
 </html>
