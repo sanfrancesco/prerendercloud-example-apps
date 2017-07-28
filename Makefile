@@ -1,3 +1,4 @@
+.PHONY: start deploylambda deployroast
 
 start:
 	yarn run prerendercloud-server -- public
@@ -7,4 +8,4 @@ deploylambda:
 
 deployroast:
 	cp _redirects public
-	roast deploy -p public
+	yarn run roast -- deploy

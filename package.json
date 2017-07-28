@@ -1,6 +1,7 @@
 {
-  "dependencies": {
-    "prerendercloud-server": "^0.1.5"
-  },
-  "devDependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "prerendercloud-server": "^0.1.5",
+    "roast": "^2.3.13"
+  }
 }

@@ -7,14 +7,15 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "lambda-xhr-endpoint/yarn.lock" }}
+          - v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "lambda-xhr-endpoint/yarn.lock" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-      - run: cd lambda-xhr-endpoint && yarn install
+      - run: yarn
+      - run: cd lambda-xhr-endpoint && yarn
       - save_cache:
           paths:
             - lambda-xhr-endpoint/node_modules
           key: v1-dependencies-{{ checksum "lambda-xhr-endpoint/package.json" }}
       - deploy:
-          name: "lambda"
-          command: make deploylambda
+          name: "deploy"
+          command: make deployroast && make deploylambda
