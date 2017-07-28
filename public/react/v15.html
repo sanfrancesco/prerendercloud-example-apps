@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ReactJS 0.15 test for http://www.prerender.cloud</title>
+  </head>
+  <body>
+    <div id='root1'></div>
+    <div id='root2'></div>
+
+    <!-- _hostParent doesn't work in 15.0 and 15.1 -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js'></script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js'></script>
+
+    <script type='text/babel' src='/react/app.js'></script>
+    <script type='text/babel'>
+      ReactDOM.render(<App id={1} />, document.getElementById('root1'))
+      ReactDOM.render(<App id={2} />, document.getElementById('root2'))
+    </script>
+  </body>
+</html>

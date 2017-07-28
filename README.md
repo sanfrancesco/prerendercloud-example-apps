@@ -1,31 +1,18 @@
-# ReactJS hello worlds in different versions
+![roast-logo-wordmark-black-github](https://cloud.githubusercontent.com/assets/22159102/24274347/e49d50dc-0fe4-11e7-8d3c-03a59e1b7bf3.jpg)
+![image](https://cloud.githubusercontent.com/assets/22159102/21554484/9d542f5a-cdc4-11e6-8c4c-7730a9e9e2d1.png)
+
+
+# Roast.io/Prerender.cloud example JavaScript apps
 
 for testing [https://www.prerender.cloud](https://www.prerender.cloud)'s ability to:
-1. prerender slow ajax requests
-2. tolerate multiple react roots
-3. tolerate dangerouslySetInnerHTML
-4. set checksums considering all of the above, in multiple versions of react without user intervention
 
-## Usage
-`npm start`
-* http://localhost:4000/version.0.13.html
-* http://localhost:4000/version.0.14.html
-* http://localhost:4000/version.0.15.html
-
-
-## ReactJS Documentation
-
-* 13 - https://github.com/facebook/react/tree/0.13-stable/docs/docs
-* 14 - https://github.com/facebook/react/tree/0.14-stable/docs/docs
-* 15 - https://github.com/facebook/react/tree/15-stable/docs/docs
-
-## Inspiration
-
-* https://gist.github.com/danawoodman/9cfddb1a0c934a35f31a
-* https://github.com/facebook/react-devtools/tree/master/test/example
-
-
-
-## CDN
-
-https://cdnjs.com/libraries/react
+1. tolerate slow XHR requests
+2. serialize window.\_\_PRELOADED_STATE\_\_
+3. React
+    * v14, v15, v16
+    * multiple React roots, with higher-order-component wrappers
+    * serialize text in dangerouslySetInnerHTML
+    * React checksums
+4. Angular
+    * v1, v2, v4
+    * v1 ng-view, ui-view

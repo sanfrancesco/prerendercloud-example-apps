@@ -5,7 +5,7 @@
     <title>ReactJS 0.14 test for http://www.prerender.cloud</title>
   </head>
   <body>
-    <div id='root'></div>
+    <div id='root1'></div>
     <div id='root2'></div>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/react/0.14.1/react.js'></script>
@@ -13,10 +13,10 @@
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js'></script>
 
-    <script type='text/babel' src='./scripts.js'></script>
+    <script type='text/babel' src='./app.js'></script>
     <script type='text/babel'>
-      ReactDOM.render(React.createElement(window.App, {message: 'ajax1'}), document.getElementById('root'));
-      ReactDOM.render(React.createElement(window.App, {message: 'ajax2'}), document.getElementById('root2'));
+      ReactDOM.render(<App id={1} />, document.getElementById('root1'))
+      ReactDOM.render(<App id={2} />, document.getElementById('root2'))
     </script>
   </body>
 </html>
