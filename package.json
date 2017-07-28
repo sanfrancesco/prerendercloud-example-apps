@@ -1,5 +1,6 @@
 {
   "dependencies": {
     "prerendercloud-server": "^0.1.5"
-  }
+  },
+  "devDependencies": {}
 }
