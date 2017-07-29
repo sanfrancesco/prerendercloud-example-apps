@@ -12,43 +12,46 @@ const fetchRemote = (path, cb) => {
   });
 };
 
-const RootSibling1 = React.createClass({
-  getInitialState() {
-    return {};
-  },
+class RootSibling1 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   componentWillMount() {
     fetchRemote("/xhr/ajax" + this.props.id, (err, data) => {
       this.setState(state => ({ body: data + " for Root Sibling 1" }));
     });
-  },
+  }
   render() {
     return <div>RootSibling1: {this.state.body || "Empty State"}</div>;
   }
-});
-const RootSibling2 = React.createClass({
-  getInitialState() {
-    return {};
-  },
+}
+class RootSibling2 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   componentWillMount() {
     fetchRemote("/xhr/ajax" + this.props.id, (err, data) => {
       this.setState(state => ({ body: data + " for Root Sibling 2" }));
     });
-  },
+  }
   render() {
     return <div>RootSibling2: {this.state.body || "Empty State"}</div>;
   }
-});
+}
 
-window.App = React.createClass({
-  getInitialState() {
-    return {};
-  },
+window.App = class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
   componentWillMount() {
     fetchRemote("/xhr/ajax" + this.props.id, (err, data) => {
       this.setState(state => ({ ajax: data }));
     });
-  },
+  }
 
   render() {
     return (
@@ -62,26 +65,27 @@ window.App = React.createClass({
       </div>
     );
   }
-});
+};
 
 // this HOC will have the same depth as what it wraps (<App />) so
 // it tests that our server-side renderer can handle HOCs
 function EmptyWrapperHoc(Component) {
-  return React.createClass({
+  return class EmptyWrapperHoc extends React.Component {
     get displayName() {
       return "EmptyWrapperHOC";
-    },
+    }
+
     componentWillMount() {
       // give it enough delay so it updates state AFTER
       // the other instance at depth 0 so we know that our
       // state tree can disambiguate between nodes at same
       // depth
       setTimeout(() => this.setState({ ready: true }), 500);
-    },
+    }
     render() {
       return <Component {...this.props} />;
     }
-  });
+  };
 }
 
 window.App = EmptyWrapperHoc(window.App);
