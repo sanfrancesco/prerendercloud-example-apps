@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <base href='/'>
+    <style>
+    body { width: 400px; }
+    nav { display: block; background: #eee; }
+    .page1, .page2, ui-view, nav { padding: 10px;  }
+    .page1 { border: 2px solid #999; background-color: #ccc; }
+    .page2 { border: 2px solid #000; background-color: #bbb; }
+    .view-content {display: block; background: #eee; }
+    </style>
+  </head>
+  <body id='body'>
+    <div ng-app="myApp" ng-controller="MainCtrl as main" prerendercloud-preboot-app-root>
+      <h1>Angular v1 SSR test - {{ main.headerCssClassName }}</h1>
+      <nav><a href="/angular/v1.html">Page1</a> | <a href="/angular/v1-page2.html">Page2</a></nav>
+      <div class="{{ main.headerCssClassName }}">
+        <strong>on route change:</strong>
+        <ol>
+          <li>title tag should change</li>
+          <li>header on this page should change</li>
+          <li>style of this div should change</li>
+          <li>div below this (the ui-view) should change</li>
+        </ol>
+      </div>
+      <div ui-view class="view-content"></div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+  <script src="https://cdn.rawgit.com/apparentlymart/angularjs-viewhead/master/angularjs-viewhead.js"></script>
+  <script src="/angular/v1.js"></script>
+</html>
