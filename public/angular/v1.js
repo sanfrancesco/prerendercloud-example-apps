@@ -6,7 +6,7 @@ app.config(function($stateProvider, $locationProvider) {
 
   var page1 = {
     name: "page1",
-    url: "/angular/v1.html",
+    url: "/angular/v1",
     controller: "MainCtrl",
     template: "<title view-head>Page 1</title><meta view-head name='og:name' content='Angular 1 test'><div>Page 1 ui-view</div><view-title>Page 1</view-title>",
     data: {
@@ -16,7 +16,7 @@ app.config(function($stateProvider, $locationProvider) {
 
   var page2 = {
     name: "page2",
-    url: "/angular/v1-page2.html",
+    url: "/angular/v1-page2",
     controller: "MainCtrl",
     template: "<title view-head>Page 2</title><div>Page 2 ui-view</div>",
     data: {
@@ -36,9 +36,9 @@ app.controller("MainCtrl", function mainCtrl(
 ) {
   var that = this;
   $transitions.onSuccess({}, function() {
-    if ($location.$$path === "/angular/v1.html") {
+    if ($location.$$path === "/angular/v1") {
       that.headerCssClassName = "page1";
-    } else if ($location.$$path === "/angular/v1-page2.html") {
+    } else if ($location.$$path === "/angular/v1-page2") {
       that.headerCssClassName = "page2";
     }
   });
